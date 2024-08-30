@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .seat-container {
+            display: grid;
+            grid-template-columns: 50px 100px  50px 50px;
+            gap: 10px 10px;
+        }
+        .seat {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .seat.selected {
+            background-color: pink;
+            border-color: #ff00ff;
+        }
+        .seat.occupiedmale {
+            background-color: #ddd;
+            cursor: not-allowed;
+            border-color: blue;
+        }
+        .seat.occupiedfemale {
+            background-color: #ddd;
+            cursor: not-allowed;
+            border-color: hotpink;
+        }
+ .legend{
+    position: relative;
+    left: 200px;
+    top: -100px;
+}
+h3{
+    font-size: 20px;
+    font-weight: bold;
+}
+.seatb{
+    position: relative;
+    height: 30px;
+    width: 30px;
+    top: 20px;
+    left: 10px;
+    border-radius: 0px;
+    background-color: white;
+}
+p1{
+    position: relative;
+    font-size: 20px;
+    top: 20px;
+    left: 15px;
+}
+.seatb1{
+    position: relative;
+    height: 30px;
+    width: 30px;
+    top: 20px;
+    left: 40px;
+    border-radius: 0px;
+    background-color: #ddd;
+}
+p2{
+    position: relative;
+    font-size: 20px;
+    top: 25px;
+    left: 50px;
+}
+.seatb2{
+    position: relative;
+    height: 30px;
+    width: 30px;
+    top: 20px;
+    left: 10px;
+    border-radius: 0px;
+    background-color: white;
+    border-color:hotpink;
+}
+p3{
+    position: relative;
+    font-size: 20px;
+    top: 20px;
+    left: 15px;
+}
+.seatb3{
+    position: relative;
+    height: 30px;
+    width: 30px;
+    top: 20px;
+    left: 60px;
+    border-radius: 0px;
+    background-color: white;
+    border-color: blue;
+}
+p4{
+    position: relative;
+    font-size: 20px;
+    top: 25px;
+    left: 70px;
+}
+.seatb4{
+    position: relative;
+    height: 50px;
+    width: 200px;
+    top: 50px;
+    left: 30px;
+    font-size: 15px;
+    font-weight:bold;
+    border-radius: 20px;
+    background-color:#d9004c;
+    color: white;
+    border-color: black;
+
+}
+.details{
+    position: relative;
+    left: -300px;
+    top: 1000px;
+    background-color: #fdf5e6;
+    height: 800px;
+    width: 700px;
+    border-radius: 20px;
+    border: solid;
+    box-shadow: 0px 0px 10px black;
+}
+h1{
+    text-align: center;
+    font-size: 30px;
+}
+hr{
+    width: 400px;
+    border: solid;
+    border-width: 1px;
+}
+h2{
+    position: relative;
+    top: 10px;
+    left: 30px;
+}
+.text{
+    position: relative;
+    height: 20px;
+    width: 400px;
+    border-radius: 0px;
+    top: -30px;
+    left: 200px;
+}
+.finalbtn{
+    position: relative;
+    height: 50px;
+    width: 200px;
+    top: 10px;
+    left: 300px;
+}
+.foot div{
+    margin : 10px;
+    border-radius: 20px;
+    text-align: center;
+    border: solid;
+    height : 50px;
+    width: 200px;
+    align-content: center;
+    font-weight: bold;
+}
+.foot{
+    display: none;
+    padding : 40px;
+    grid-template-columns: 250px auto ;
+    justify-content: center;
+    justify-items: center;
+    margin : 10px;
+    border: solid;
+    border-radius: 30px;
+    background-color: #ffa089;
+}
+.finalbtn{
+    position: relative;
+    border : solid;
+    margin : 20px;
+    width : 300px;
+    border-radius: 20px;
+    left: 200px;
+}
+.foot div:nth-child(1) {
+    border-color: black;
+    color : black;
+    font-weight : bold;
+    font-size: 30px;
+    align-content: center;
+}
+.foot div:nth-child(2) {
+    border-color: black;
+    font-weight: bold;
+    color : black;
+    font-size : 30px;
+    align-content: center;
+}
+.selected {
+    background-color: grey;
+}
+
+    </style>
+</head>
+<body>
+    <div class="seat-container">
+        <div class="seat occupiedmale" onclick="storevalue('seat 1',600)">1</div>
+        <div class="seat occupiedmale" onclick="storevalue('seat 2',600)">2</div>
+        <div class="seat " onclick="storevalue('seat 3',600)">3</div>
+        <div class="seat " onclick="storevalue('seat 4',600)">4</div>
+        <div class="seat" onclick="storevalue('seat 5',600)">5</div>
+        <div class="seat" onclick="storevalue('seat 6',700)">6</div>
+        <div class="seat" onclick="storevalue('seat 7',700)">7</div>
+        <div class="seat" onclick="storevalue('seat 8',700)">8</div>
+        <div class="seat" onclick="storevalue('seat 9',700)">9</div>
+        <div class="seat" onclick="storevalue('seat 10',700)">10</div>
+        <div class="seat" onclick="storevalue('seat 11',800)">11</div>
+        <div class="seat" onclick="storevalue('seat 12',800)">12</div>
+        <div class="seat" onclick="storevalue('seat 13',800)">13</div>
+        <div class="seat occupiedfemale" onclick="storevalue('seat 14',800)">14</div>
+        <div class="seat occupiedfemale" onclick="storevalue('seat 15',800)">15</div>
+        <div class="seat" onclick="storevalue('seat 16',800)">16</div>
+        <div class="seat" onclick="storevalue('seat 17',800)">17</div>
+        <div class="seat" onclick="storevalue('seat 18',800)">18</div>
+        <div class="seat" onclick="storevalue('seat 19',800)">19</div>
+        <div class="seat occupiedmale" onclick="storevalue('seat 20',800)">20</div>
+        <div class="seat occupiedfemale" onclick="storevalue('seat 21',750)">21</div>
+        <div class="seat" onclick="storevalue('seat 22',750)">22</div>
+        <div class="seat" onclick="storevalue('seat 23',750)">23</div>
+        <div class="seat" onclick="storevalue('seat 24',750)">24</div>
+        <div class="seat" onclick="storevalue('seat 25',750)">25</div>
+        <div class="seat" onclick="storevalue('seat 26',750)">26</div>
+        <div class="seat" onclick="storevalue('seat 27',750)">27</div>
+        <div class="seat" onclick="storevalue('seat 28',750)">28</div>
+        <div class="seat occupiedmale" onclick="storevalue('seat 29',750)">29</div>
+        <div class="seat occupiedmale" onclick="storevalue('seat 30',750)">30</div>
+        <div class="seat occupiedfemale" onclick="storevalue('seat 31',550)">31</div>
+        <div class="seat" onclick="storevalue('seat 32',550)">32</div>
+        <div class="seat" onclick="storevalue('seat 33',550)">33</div>
+        <div class="seat" onclick="storevalue('seat 34',550)">34</div>
+        <div class="seat" onclick="storevalue('seat 35',550)">35</div>
+        <div class="seat" onclick="storevalue('seat 36',550)">36</div>
+    </div>
+    <div class="legend">
+    <h3>SEAT LEGEND</h3>
+    <input class="seatb" type="button" name="button">
+    <p1>Available</p1>
+    <input class="seatb1" type="button" name="button">
+    <p2>Unavailable</p2>
+    <br>
+    <br>
+    <br>
+    <input class="seatb2" type="button" name="button">
+    <p3>Female</p3>
+    <input class="seatb3" type="button" name="button">
+    <p4>Male</p4>
+    <div class="proceed">
+            <a href="#section"><button class="seatb4">Proceed Booking</button></a>
+        </div>
+    </div>
+    <section id="section">
+    <div class="details">
+        <h1>PASSENGER DETAILS</h1>
+        <hr>
+        <form action="finslbtn">
+                <label for="first name"><h2>First name :</h2></label>
+                <input class="text" type="text" id="name" required>
+                <label for="last name"><h2>Last Name :</h2></label>
+                <input class="text" type="text" id="name">
+                <label for="age"><h2>Age :</h2></label>
+                <input class="text" type="number" id="age" required>
+                    <label for="gender"><h2> Gender :</h2></label>
+                         <input class="text" type="text" id="gender" required>
+                      <label for="mobile no"><h2> Mobile No:</h2></label>
+                         <input class="text" type="number" id="mobile no"   required>
+                      <label for="email"><h2> Email :</h2></label>
+                         <input class="text" type="email" id="mail">
+                        
+             <div class="za">
+            <button class="finalbtn" onclick="addnew()">CONFIRM TICKETS</button>
+        </div>
+            <div class="foot" id="container">
+            </div>
+                </div>
+        </section>
+    </form>
+    <script>
+var x = [];
+var y = [];
+
+function addnew(){
+    var element = document.getElementById("container");
+    element.style.display = "grid";
+    var newElement = document.createElement("div");
+    newElement.textContent = "Seat No";
+    document.getElementById("container").appendChild(newElement);
+    var newElement = document.createElement("div");
+    newElement.textContent = " Price";
+    document.getElementById("container").appendChild(newElement);
+    for (var i=0;i<x.length; i++){
+        var newElement = document.createElement("div");
+        newElement.textContent = x[i];
+        document.getElementById("container").appendChild(newElement);
+        var newElement = document.createElement("div");
+        newElement.textContent = y[i];
+        document.getElementById("container").appendChild(newElement);
+    }
+    var newElement = document.createElement("div");
+    newElement.textContent = "Total";
+    document.getElementById("container").appendChild(newElement);
+    var newElement = document.createElement("div");
+    newElement.textContent = addall();
+    document.getElementById("container").appendChild(newElement);
+}
+function addall(){
+    s = 0
+    for (var i=0; i<x.length; i++){
+        s = s + y[i];
+    }
+    return s;
+}
+
+function storevalue(name,price){
+    x.push(name);
+    y.push(price);
+}
+        const seats = document.querySelectorAll('.seat');
+
+        // Add event listeners to each seat
+        seats.forEach(seat => {
+            seat.addEventListener('click', toggleSeatColor);
+        });
+
+        function toggleSeatColor(event) {
+            event.target.classList.toggle('selected');
+            
+            // Check the number of selected seats
+            const selectedSeats = document.querySelectorAll('.seat.selected');
+            
+            // If more than 4 seats are selected, show an alert
+            if (selectedSeats.length > 4) {
+                alert('You cannot select more than 4 seats.');
+                
+                // Unselect the last clicked seat
+                event.target.classList.remove('selected');
+            }
+        }
+         
+
+    </script>
+</body>
+</html>
